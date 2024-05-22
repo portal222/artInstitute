@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, Routes, Route, NavLink, HashRouter } from 'react-router-dom';
 import Home from "./Home";
+import ImageBaseResults from "./result/ImageBaseResults";
+import ImageBaseResPage from "./result/ImageBaseResPage";
 
 
 import Footers from "./Footers";

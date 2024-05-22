@@ -1,5 +1,5 @@
 import React from "react";
-import SearchPlace from "./SearchPlace";
+import SearchPlace from "../search/SearchPlace";
 
 const Home = () => {
 
