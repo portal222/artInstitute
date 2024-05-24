@@ -1,11 +1,16 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from 'axios';
+
 import { useNavigate } from "react-router-dom";
+
+import { useParams } from "react-router-dom";
 import GlobalContext from "../GlobalContext";
+
+// import SearchPlaceCM2 from "./SearchPlaceCM2";
 import Loader from "../Loader";
 import Photo from "./photo";
 import TableRow from "./TableRow";
-import SearchPlace2 from "../search/SearchPlace2";
+import SearchPlace from "../search/SearchPlace";
 
 
 
@@ -13,12 +18,16 @@ import SearchPlace2 from "../search/SearchPlace2";
 
 
 
-const ImageBaseResPage = () => {
+const ImageBaseClick = () => {
 
     const [error, setError] = useState(null);
     const [image, setImage] = useState([]);
     const [page, setPage] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
+
+    const params = useParams();
+    const pageNum = params.pageNum;
 
     const globalCtx = useContext(GlobalContext);
     const searchStringValue = globalCtx.searchStringValue;
@@ -26,19 +35,18 @@ const ImageBaseResPage = () => {
     const navigate = useNavigate();
 
     const clickPage = (pageNum) => {
-        const LinkTo = `/ImageBaseClick/${pageNum}`;
+        const LinkTo = `/ImageBaseClick2/${pageNum}`;
         navigate(LinkTo);
     }
 
 
-    console.log("ime pretraga", searchStringValue)
 
     useEffect(() => {
-        getImage(searchStringValue);
+        getImage();
     }, [])
 
-    const getImage = async (searchStringValue) => {
-        const url = `https://api.artic.edu/api/v1/artworks?page=${searchStringValue}`;
+    const getImage = async () => {
+        const url = `https://api.artic.edu/api/v1/artworks?page=${pageNum}`;
 
         try {
             const response = await axios.get(url)
@@ -64,12 +72,10 @@ const ImageBaseResPage = () => {
     if (isLoading) {
         return (
             <div className="main">
-
                 <div className="home">
-                    {/* <SearchPlace2 /> */}
-                    <Loader />
+                    {/* <SearchPlace /> */}
+                <Loader />
                 </div>
-
             </div>
         )
     }
@@ -82,12 +88,11 @@ const ImageBaseResPage = () => {
                 <thead>
                     <tr>
                         <td className="home">
-                            <SearchPlace2 />
+                            <SearchPlace />
                         </td>
                     </tr>
-
                     <tr>
-                        <td colSpan={2}>
+                        <td >
 
                             <div className="butHold">
                                 <div className="butPage"
@@ -99,6 +104,9 @@ const ImageBaseResPage = () => {
                                     onClick={() => clickPage(page.current_page + 1)}>Next</div>
                                 <div className="butPage"
                                     onClick={() => clickPage(page.current_page + 10)}>+10</div>
+
+
+                            
                             </div>
                         </td>
                     </tr>
@@ -134,11 +142,21 @@ const ImageBaseResPage = () => {
                         </tr>
                         <TableRow details={museum} />
 
+
+
+
+
+
+
+
+
                         <tr>
                             <td>
                                 <hr></hr>
                             </td>
                         </tr>
+
+                        {/* <ImageBaseDet apiLink = {museum.api_link}/> */}
                     </tbody>
 
                 ))}
@@ -167,4 +185,4 @@ const ImageBaseResPage = () => {
     )
 
 }
-export default ImageBaseResPage;
+export default ImageBaseClick;

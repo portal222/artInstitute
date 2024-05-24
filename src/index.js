@@ -1,8 +1,5 @@
 import React from "react";
-
 import ReactDOM from "react-dom/client";
-
-import "./css/styles.css";
 import "./scss/main.scss";
 
 // import { App } from "./App"; //ovo je primer export

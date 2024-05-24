@@ -3,11 +3,11 @@ import axios from 'axios';
 import GlobalContext from "../GlobalContext";
 import Loader from "../Loader";
 import ImageArtworks from "./ImageArtworks";
-import SearchPlace2 from "../search/SearchPlace2";
+import SearchPlace from "../search/SearchPlace";
 import PaginationCM from "./PaginationCM";
 import { Box, Pagination } from "@mui/material";
 
-const ImageBaseResults = () => {
+const ImageBaseResults2 = () => {
 
     const [error, setError] = useState(null);
     const [data, setData] = useState([]);
@@ -59,7 +59,7 @@ const ImageBaseResults = () => {
             <div className="main">
 
                 <div className="home">
-                    {/* <SearchPlace2 /> */}
+     
                     <Loader />
                 </div>
             </div>
@@ -71,7 +71,7 @@ const ImageBaseResults = () => {
         <>
             <div className="main">
                 <div className="home">
-                    <SearchPlace2 />
+                    <SearchPlace />
                 </div>
             </div>
 
@@ -110,4 +110,4 @@ const ImageBaseResults = () => {
     )
 
 }
-export default ImageBaseResults;
+export default ImageBaseResults2;

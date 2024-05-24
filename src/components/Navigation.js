@@ -2,10 +2,15 @@ import React from "react";
 import { Link, Routes, Route, NavLink, HashRouter } from 'react-router-dom';
 import Home from "./Home";
 import ImageBaseResults from "./result/ImageBaseResults";
+import ImageBaseResults2 from "./result/ImageBaseResults2";
 import ImageBaseResPage from "./result/ImageBaseResPage";
+import ImageBaseResPage2 from "./result/ImageBaseResPage2";
+import ImageBaseClick from "./result/ImageBaseClick";
+import ImageBaseClick2 from "./result/ImageBaseClick2";
 
 
 import Footers from "./Footers";
+
 
 
 export default function Navigation() {
@@ -13,12 +18,12 @@ export default function Navigation() {
     <HashRouter basename="/">
       <div className="main">
 
-
-        <p >
+        <div className="institute">
           <Link to='/' >
-          Art Institute of Chicago
+            ART INSTITUTE OF CHICAGO
           </Link>
-        </p>
+        </div >
+
 
 
 
@@ -31,12 +36,16 @@ export default function Navigation() {
 
         <Route path="/" element={<Home />} />
         <Route path="/artistCM" element={<ImageBaseResults />} />
+        <Route path="/artistCM2" element={<ImageBaseResults2 />} />
         <Route path="/CMpage" element={<ImageBaseResPage />} />
+        <Route path="/CMpage2" element={<ImageBaseResPage2 />} />
+        <Route path="/ImageBaseClick/:pageNum" element={<ImageBaseClick />} />
+        <Route path="/ImageBaseClick2/:pageNum" element={<ImageBaseClick2 />} />
 
       </Routes>
 
       <Footers />
-   
+
 
     </HashRouter>
   )

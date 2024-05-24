@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import GlobalContext from "../GlobalContext";
 import Loader from "../Loader";
 import Photo from "./photo";
 import TableRow from "./TableRow";
-import SearchPlace2 from "../search/SearchPlace2";
+import SearchPlace from "../search/SearchPlace";
 
 
 
@@ -13,7 +14,7 @@ import SearchPlace2 from "../search/SearchPlace2";
 
 
 
-const ImageBaseResPage = () => {
+const ImageBaseResPage2 = () => {
 
     const [error, setError] = useState(null);
     const [image, setImage] = useState([]);
@@ -66,7 +67,7 @@ const ImageBaseResPage = () => {
             <div className="main">
 
                 <div className="home">
-                    {/* <SearchPlace2 /> */}
+                    {/* <SearchPlace /> */}
                     <Loader />
                 </div>
 
@@ -82,7 +83,7 @@ const ImageBaseResPage = () => {
                 <thead>
                     <tr>
                         <td className="home">
-                            <SearchPlace2 />
+                            <SearchPlace />
                         </td>
                     </tr>
 
@@ -167,4 +168,4 @@ const ImageBaseResPage = () => {
     )
 
 }
-export default ImageBaseResPage;
+export default ImageBaseResPage2;

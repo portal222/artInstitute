@@ -3,7 +3,8 @@ import { Paper,InputBase,IconButton } from "@mui/material";
 
 
 import { useNavigate } from "react-router-dom";
-import GlobalContext from "./GlobalContext";
+import GlobalContext from "../GlobalContext";
+import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
 
 const SearchArt = (props) => {
 
@@ -56,8 +57,8 @@ const SearchArt = (props) => {
             sx={{ p: '10px'}}
             aria-label='search'
             >
-         🏛
-            </IconButton>
+      <PaletteOutlinedIcon />
+          </IconButton>
         </Paper>
     );
 };

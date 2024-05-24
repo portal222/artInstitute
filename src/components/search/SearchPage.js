@@ -1,9 +1,11 @@
 import React, { useRef, useContext } from "react";
 import { Paper,InputBase,IconButton } from "@mui/material";
+import PlagiarismOutlinedIcon from '@mui/icons-material/PlagiarismOutlined';
 
 
 import { useNavigate } from "react-router-dom";
-import GlobalContext from "./GlobalContext";
+
+import GlobalContext from "../GlobalContext";
 
 const SearchPage = (props) => {
 
@@ -31,13 +33,14 @@ const SearchPage = (props) => {
     };
 
     return (
-        <Paper className="paper"
+        <Paper 
         component = 'form'
         se={{
             p: '2px 4px',
             display: 'flex',
             alignItems: 'center',
             width: '40rem',
+         
             fontSize: '28px',
             backgroundColor: 'red',
         }}
@@ -56,7 +59,7 @@ const SearchPage = (props) => {
             sx={{ p: '10px'}}
             aria-label='search'
             >
-         📄
+       <PlagiarismOutlinedIcon />
             </IconButton>
         </Paper>
     );

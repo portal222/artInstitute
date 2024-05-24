@@ -1,15 +1,17 @@
 import React from "react";
-import SearchPlace from "../search/SearchPlace";
+import SearchPlace from "./search/SearchPlace";
+import ImageBaseHome from "./result/ImageBaseHome";
+
+
 
 const Home = () => {
 
 
     return (
-        <><div className="main">
-            <h2 className="title">Art Institute of Chicago</h2>
-        </div>
+        <>
+        <ImageBaseHome />
         
-        <SearchPlace />
+    
         </>
     )
 
