@@ -8,9 +8,10 @@ import GlobalContext from "../GlobalContext";
 
 // import SearchPlaceCM2 from "./SearchPlaceCM2";
 import Loader from "../Loader";
-import Photo from "./photo";
+
 import TableRow from "./TableRow";
 import SearchPlace from "../search/SearchPlace";
+import Photos from "./Photos";
 
 
 
@@ -118,7 +119,7 @@ const ImageBaseClick = () => {
                         <tr>
                             <td className="image">
 
-                                <Photo photos={museum.image_id} />
+                                <Photos photos={museum.image_id} />
                             </td>
 
                         </tr>

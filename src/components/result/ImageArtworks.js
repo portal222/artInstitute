@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 import Loader from "../Loader";
-import Photo from "./photo";
+import Photos from "./Photos";
 import TableRow from "./TableRow";
 
 
@@ -58,7 +58,7 @@ const ImageArtworks = (props) => {
                 <tr>
                     <td>
 
-                        <Photo photos={museum.image_id} />
+                        <Photos photos={museum.image_id} />
                     </td>
 
                 </tr>

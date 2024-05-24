@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 import GlobalContext from "../GlobalContext";
 
-const SearchPage = (props) => {
+const SearchPages = (props) => {
 
     const globalCtx = useContext(GlobalContext);
 
@@ -64,4 +64,4 @@ const SearchPage = (props) => {
         </Paper>
     );
 };
-export default SearchPage;
+export default SearchPages;

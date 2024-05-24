@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import GlobalContext from "../GlobalContext";
 import Loader from "../Loader";
-import Photo from "./photo";
+import Photos from "./Photos";
 import TableRow from "./TableRow";
 import SearchPlace2 from "../search/SearchPlace2";
 
@@ -110,7 +110,7 @@ const ImageBaseResPage = () => {
                         <tr>
                             <td className="image">
 
-                                <Photo photos={museum.image_id} />
+                                <Photos photos={museum.image_id} />
                             </td>
 
                         </tr>

@@ -8,7 +8,7 @@ import GlobalContext from "../GlobalContext";
 
 // import SearchPlaceCM2 from "./SearchPlaceCM2";
 import Loader from "../Loader";
-import Photo from "./photo";
+import Photos from "./Photos";
 import TableRow from "./TableRow";
 import SearchPlace from "../search/SearchPlace";
 
@@ -115,7 +115,7 @@ const ImageBaseHome = () => {
                         <tr>
                             <td className="image">
 
-                                <Photo photos={museum.image_id} />
+                                <Photos photos={museum.image_id} />
                             </td>
 
                         </tr>

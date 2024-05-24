@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import GlobalContext from "../GlobalContext";
 import Loader from "../Loader";
-import Photo from "./photo";
+import Photos from "./Photos";
 import TableRow from "./TableRow";
 import SearchPlace from "../search/SearchPlace";
 
@@ -111,7 +111,7 @@ const ImageBaseResPage2 = () => {
                         <tr>
                             <td className="image">
 
-                                <Photo photos={museum.image_id} />
+                                <Photos photos={museum.image_id} />
                             </td>
 
                         </tr>
