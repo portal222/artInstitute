@@ -20,8 +20,6 @@ const ImageBaseResults = () => {
 
 
 
-    console.log("ime pretraga", searchStringValue)
-
     useEffect(() => {
         getImage(searchStringValue);
     }, [])
@@ -34,9 +32,6 @@ const ImageBaseResults = () => {
 
 
             const data = response.data;
-
-            console.log("pretraga CM muzej", data);
-            console.log("pagination CM", data.pagination);
 
             setData(data.data);
 
@@ -56,29 +51,43 @@ const ImageBaseResults = () => {
 
     if (isLoading) {
         return (
-            <div className="main">
+            <table className="main">
+            <tbody>
+                <tr>
+                    <td className="home">
+                        <SearchPlace2 />
+                    </td>
+                </tr>
+                <tr>
+                    <td className="home">
+                        <Loader />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-                <div className="home">
-                    {/* <SearchPlace2 /> */}
-                    <Loader />
-                </div>
-            </div>
         )
     }
 
 
     return (
         <>
-            <div className="main">
-                <div className="home">
-                    <SearchPlace2 />
-                </div>
-            </div>
+         <table className="main">
+            <tbody>
+                <tr>
+                    <td className="home">
+                        <SearchPlace2 />
+                    </td>
+                </tr>
+             
+            </tbody>
+        </table>
+      
 
             <Box>
 
                 {paginatedPosts.length > 1 && (
-                    <Box mt={2} display="flex" justifyContent="center">
+                    <Box mt={2} display="flex" justifyContent="center" paddingBottom="15px">
                         <Pagination
                             count={paginatedPosts.length}
                             page={currentPage}
@@ -96,7 +105,7 @@ const ImageBaseResults = () => {
                         </div>
                     ))}
                 {paginatedPosts.length > 1 && (
-                    <Box mt={2} display="flex" justifyContent="center">
+                    <Box mt={2} display="flex" justifyContent="center" paddingBottom="50px">
                         <Pagination
                             count={paginatedPosts.length}
                             page={currentPage}

@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import GlobalContext from "../GlobalContext";
 import Loader from "../Loader";
 import Photos from "./Photos";
@@ -31,9 +30,6 @@ const ImageBaseResPage2 = () => {
         navigate(LinkTo);
     }
 
-
-    console.log("ime pretraga", searchStringValue)
-
     useEffect(() => {
         getImage(searchStringValue);
     }, [])
@@ -46,9 +42,6 @@ const ImageBaseResPage2 = () => {
 
 
             const data = response.data;
-
-            console.log("pretraga CM museum", data);
-            console.log("pagination CM", data.pagination);
 
             setImage(data.data);
 
@@ -64,14 +57,21 @@ const ImageBaseResPage2 = () => {
 
     if (isLoading) {
         return (
-            <div className="main">
+            <table className="main">
+                <tbody>
+                    <tr>
+                        <td className="home">
+                            <SearchPlace />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className="home">
+                            <Loader />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <div className="home">
-                    {/* <SearchPlace /> */}
-                    <Loader />
-                </div>
-
-            </div>
         )
     }
 

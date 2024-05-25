@@ -29,7 +29,7 @@ const ImageArtworks = (props) => {
             const response = await axios.get(url)
 
             const data = response.data;
-            console.log("prenos broja slike", data)
+        
             setMuseum(data.data)
             setIsLoading(false);
 
@@ -52,13 +52,13 @@ const ImageArtworks = (props) => {
 
     return (
         <>
-
+<table>
             <tbody >
 
                 <tr>
                     <td>
 
-                        <Photos photos={museum.image_id} />
+                        <Photos photos={museum.image_id} photoAlt={museum.alt_image_ids}/>
                     </td>
 
                 </tr>
@@ -92,7 +92,7 @@ const ImageArtworks = (props) => {
                 </tr>
 
             </tbody>
-
+            </table>
 
         </>
     )

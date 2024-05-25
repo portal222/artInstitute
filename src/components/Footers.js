@@ -6,7 +6,7 @@ return (
       <br></br>
        The Art Institute Of Chicago® <a href="https://www.artic.edu/" target="_blanc">www.artic.edu</a>
          <br></br> 
-         developer InTerVal
+         Developer: InTerVal
     </div>
 )
 }

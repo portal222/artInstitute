@@ -4,11 +4,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 import { useParams } from "react-router-dom";
-import GlobalContext from "../GlobalContext";
-
-// import SearchPlaceCM2 from "./SearchPlaceCM2";
 import Loader from "../Loader";
-
 import TableRow from "./TableRow";
 import SearchPlace from "../search/SearchPlace";
 import Photos from "./Photos";
@@ -30,8 +26,6 @@ const ImageBaseClick = () => {
     const params = useParams();
     const pageNum = params.pageNum;
 
-    const globalCtx = useContext(GlobalContext);
-    const searchStringValue = globalCtx.searchStringValue;
 
     const navigate = useNavigate();
 
@@ -55,9 +49,6 @@ const ImageBaseClick = () => {
 
             const data = response.data;
 
-            console.log("pretraga CM museum", data);
-            console.log("pagination CM", data.pagination);
-
             setImage(data.data);
 
             setPage(data.pagination);
@@ -72,12 +63,20 @@ const ImageBaseClick = () => {
 
     if (isLoading) {
         return (
-            <div className="main">
-                <div className="home">
-                    {/* <SearchPlace /> */}
-                <Loader />
-                </div>
-            </div>
+            <table className="main">
+                <tbody>
+                    <tr>
+                        <td className="home">
+                            <SearchPlace />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className="home">
+                            <Loader />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         )
     }
 
@@ -143,21 +142,12 @@ const ImageBaseClick = () => {
                         </tr>
                         <TableRow details={museum} />
 
-
-
-
-
-
-
-
-
                         <tr>
                             <td>
                                 <hr></hr>
                             </td>
                         </tr>
 
-                        {/* <ImageBaseDet apiLink = {museum.api_link}/> */}
                     </tbody>
 
                 ))}

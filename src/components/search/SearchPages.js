@@ -21,8 +21,7 @@ const SearchPages = (props) => {
 
         globalCtx.setSearchStringFn(searchString.current.value.trim());
         navigate(props.linkTo);
-        
-        console.log("Search CM page", searchString)
+
     };
 
     const handleKeyDown = (e) => {
@@ -46,10 +45,8 @@ const SearchPages = (props) => {
         }}
         >
             <InputBase className="base"
-            // sx={{ ml:1, flex: 1 }}
             autoFocus
             placeholder={props.placeholder}
-            // inputProps={{ 'ariel-label': 'search' }}
             inputRef={searchString}
             onKeyDown={handleKeyDown}
             />

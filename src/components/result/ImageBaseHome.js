@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 import { useParams } from "react-router-dom";
 import GlobalContext from "../GlobalContext";
-
-// import SearchPlaceCM2 from "./SearchPlaceCM2";
 import Loader from "../Loader";
 import Photos from "./Photos";
 import TableRow from "./TableRow";
@@ -54,9 +52,6 @@ const ImageBaseHome = () => {
 
             const data = response.data;
 
-            console.log("pretraga CM museum", data);
-            console.log("pagination CM", data.pagination);
-
             setImage(data.data);
 
             setPage(data.pagination);
@@ -71,12 +66,21 @@ const ImageBaseHome = () => {
 
     if (isLoading) {
         return (
-            <div className="main">
-                <div className="home">
-                    {/* <SearchPlace /> */}
-                <Loader />
-                </div>
-            </div>
+            <table className="main">
+                <tbody>
+                    <tr>
+                        <td className="home">
+                            <SearchPlace />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className="home">
+                            <Loader />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
         )
     }
 

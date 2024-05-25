@@ -31,8 +31,6 @@ const ImageBaseResPage = () => {
     }
 
 
-    console.log("ime pretraga", searchStringValue)
-
     useEffect(() => {
         getImage(searchStringValue);
     }, [])
@@ -45,9 +43,6 @@ const ImageBaseResPage = () => {
 
 
             const data = response.data;
-
-            console.log("pretraga CM museum", data);
-            console.log("pagination CM", data.pagination);
 
             setImage(data.data);
 
@@ -63,14 +58,21 @@ const ImageBaseResPage = () => {
 
     if (isLoading) {
         return (
-            <div className="main">
+            <table className="main">
+                <tbody>
+                    <tr>
+                        <td className="home">
+                            <SearchPlace2 />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className="home">
+                            <Loader />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <div className="home">
-                    {/* <SearchPlace2 /> */}
-                    <Loader />
-                </div>
-
-            </div>
         )
     }
 

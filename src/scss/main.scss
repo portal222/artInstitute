@@ -143,12 +143,15 @@
 
 .footer {
     margin-top: 30px;
-    border-top: 1px solid rgb(47, 47, 47);
+    border-top: 1px solid rgb(94, 94, 94);
+    color: rgb(94, 94, 94);
     text-align: center;
-    font-size: 14px;
+    font-family:Tahoma, sans-serif;
+    font-size: 13px;
     padding-top: 15px;
+    padding-bottom: 20px;
     width: 100%;
-    height: 20px;
+    height: 60px;
 }
 
 @media screen and (max-width: 500px) {
@@ -198,7 +201,7 @@
 
         }
         .credit {
-            font-size: 12px;
+            font-size: 11px;
             padding: 3px 15px;
 
         }
@@ -222,5 +225,8 @@
                 width: 50px;
             }
         }
+    }
+    .footer {
+        font-size: 9px;
     }
 }

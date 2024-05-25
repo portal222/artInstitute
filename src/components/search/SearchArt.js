@@ -21,7 +21,6 @@ const SearchArt = (props) => {
         globalCtx.setSearchStringFn(searchString.current.value.trim());
         navigate(props.linkTo);
         
-        console.log("Search CM pretraga", searchString)
     };
 
     const handleKeyDown = (e) => {
@@ -44,10 +43,8 @@ const SearchArt = (props) => {
         }}
         >
             <InputBase className="base"
-            // sx={{ ml:1, flex: 1 }}
             autoFocus
             placeholder={props.placeholder}
-            // inputProps={{ 'ariel-label': 'search' }}
             inputRef={searchString}
             onKeyDown={handleKeyDown}
             />

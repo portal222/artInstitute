@@ -7,8 +7,8 @@ const SearchPlace2 = () => {
     return (
 
             <div className="search">
-                <SearchPages placeholder={'Page - 10482'} linkTo={'/CMpage2'} />
                 <SearchArt placeholder={'Artworks'} linkTo={'/artistCM2'} />
+                <SearchPages placeholder={'Page - 10482'} linkTo={'/CMpage2'} />
             </div>
     )
 

@@ -11,7 +11,6 @@ const ImageBaseResults2 = () => {
 
     const [error, setError] = useState(null);
     const [data, setData] = useState([]);
-    const [page, setPage] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -19,8 +18,6 @@ const ImageBaseResults2 = () => {
     const searchStringValue = globalCtx.searchStringValue;
 
 
-
-    console.log("ime pretraga", searchStringValue)
 
     useEffect(() => {
         getImage(searchStringValue);
@@ -35,12 +32,8 @@ const ImageBaseResults2 = () => {
 
             const data = response.data;
 
-            console.log("pretraga CM muzej", data);
-            console.log("pagination CM", data.pagination);
-
             setData(data.data);
 
-            setPage(data.pagination);
             setIsLoading(false);
 
 
@@ -56,29 +49,41 @@ const ImageBaseResults2 = () => {
 
     if (isLoading) {
         return (
-            <div className="main">
+            <table className="main">
+                <tbody>
+                    <tr>
+                        <td className="home">
+                            <SearchPlace />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className="home">
+                            <Loader />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <div className="home">
-     
-                    <Loader />
-                </div>
-            </div>
         )
     }
 
 
     return (
         <>
-            <div className="main">
-                <div className="home">
-                    <SearchPlace />
-                </div>
-            </div>
+            <table className="main">
+                <tbody>
+                    <tr>
+                        <td className="home">
+                            <SearchPlace />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
             <Box>
 
                 {paginatedPosts.length > 1 && (
-                    <Box mt={2} display="flex" justifyContent="center">
+                    <Box mt={2} display="flex" justifyContent="center" paddingBottom="15px">
                         <Pagination
                             count={paginatedPosts.length}
                             page={currentPage}
@@ -96,7 +101,7 @@ const ImageBaseResults2 = () => {
                         </div>
                     ))}
                 {paginatedPosts.length > 1 && (
-                    <Box mt={2} display="flex" justifyContent="center">
+                    <Box mt={2} display="flex" justifyContent="center" paddingBottom="50px">
                         <Pagination
                             count={paginatedPosts.length}
                             page={currentPage}
