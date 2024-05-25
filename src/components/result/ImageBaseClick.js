@@ -116,10 +116,10 @@ const ImageBaseClick = () => {
                     <tbody key={museum.id}>
 
                         <tr>
-                            <td className="image">
+                         
 
                                 <Photos photos={museum.image_id} />
-                            </td>
+                           
 
                         </tr>
                         <tr>

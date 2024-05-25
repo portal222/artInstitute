@@ -56,10 +56,10 @@ const ImageArtworks = (props) => {
             <tbody >
 
                 <tr>
-                    <td>
+                 
 
-                        <Photos photos={museum.image_id} photoAlt={museum.alt_image_ids}/>
-                    </td>
+                        <Photos photos={museum.image_id}/>
+                   
 
                 </tr>
                 <tr>
