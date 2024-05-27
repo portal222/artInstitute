@@ -10,6 +10,7 @@ import ImageBaseClick2 from "./result/ImageBaseClick2";
 
 
 import Footers from "./Footers";
+import BanerImg from "./result/BanerImg";
 
 
 
@@ -20,9 +21,10 @@ export default function Navigation() {
 
         <div className="institute">
           <Link to='/' >
-            ART INSTITUTE OF CHICAGO
+         <BanerImg/>
           </Link>
         </div >
+ 
 
 
 

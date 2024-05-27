@@ -9,9 +9,16 @@ const Home = () => {
 
     return (
         <>
-        <ImageBaseHome />
-        
-    
+            <div className="main">
+                <p className="homePage">
+                    Welcome to <br></br>
+                    The Art Institute Of Chicago. </p>
+                 <p className="homePage2">   For best search of artworks and artist use " ".
+                </p>
+            </div>
+            <ImageBaseHome />
+
+
         </>
     )
 
