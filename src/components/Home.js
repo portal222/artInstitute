@@ -13,7 +13,10 @@ const Home = () => {
                 <p className="homePage">
                     Welcome to <br></br>
                     The Art Institute Of Chicago. </p>
-                 <p className="homePage2">   For best search of artworks and artist use " ".
+                 <p className="homePage2">  You can search museum by artist, artwork title,
+                  <br></br>
+                  place of origin, medium, year... <br></br>
+                   For best search use " ".
                 </p>
             </div>
             <ImageBaseHome />

@@ -19,6 +19,8 @@ const ImageBaseResPage2 = () => {
     const [image, setImage] = useState([]);
     const [page, setPage] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [results, setResults] = useState([]);
+
 
     const globalCtx = useContext(GlobalContext);
     const searchStringValue = globalCtx.searchStringValue;
@@ -46,9 +48,8 @@ const ImageBaseResPage2 = () => {
             setImage(data.data);
 
             setPage(data.pagination);
+            setResults(data.data.length);
             setIsLoading(false);
-
-
 
         } catch (err) {
             setError(err);
@@ -71,7 +72,23 @@ const ImageBaseResPage2 = () => {
                     </tr>
                 </tbody>
             </table>
-
+        )
+    } else if (results == 0) {
+        return (
+            <table className="main">
+            <tbody>
+                <tr>
+                    <td className="home">
+                        <SearchPlace />
+                    </td>
+                </tr>
+                <tr>
+                    <td className="results">
+                      noting found
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         )
     }
 

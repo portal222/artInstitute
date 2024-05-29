@@ -53,7 +53,7 @@ const SearchPages = (props) => {
             <IconButton 
             type='button'
             onClick={handleClickSearch}
-            sx={{ p: '10px'}}
+            sx={{ p: '3px'}}
             aria-label='search'
             >
        <PlagiarismOutlinedIcon />

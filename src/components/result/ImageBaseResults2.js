@@ -13,6 +13,7 @@ const ImageBaseResults2 = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
+    const [results, setResults] = useState([]);
 
     const globalCtx = useContext(GlobalContext);
     const searchStringValue = globalCtx.searchStringValue;
@@ -33,6 +34,7 @@ const ImageBaseResults2 = () => {
             const data = response.data;
 
             setData(data.data);
+            setResults(data.data.length);
 
             setIsLoading(false);
 
@@ -64,6 +66,23 @@ const ImageBaseResults2 = () => {
                 </tbody>
             </table>
 
+        )
+    } else if (results == 0) {
+        return (
+            <table className="main">
+            <tbody>
+                <tr>
+                    <td className="home">
+                        <SearchPlace />
+                    </td>
+                </tr>
+                <tr>
+                    <td className="results">
+                        noting found
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         )
     }
 

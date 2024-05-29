@@ -14,6 +14,8 @@ const ImageBaseResults = () => {
     const [page, setPage] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
+    const [results, setResults] = useState([]);
+
 
     const globalCtx = useContext(GlobalContext);
     const searchStringValue = globalCtx.searchStringValue;
@@ -36,6 +38,7 @@ const ImageBaseResults = () => {
             setData(data.data);
 
             setPage(data.pagination);
+            setResults(data.data.length);
             setIsLoading(false);
 
 
@@ -52,37 +55,56 @@ const ImageBaseResults = () => {
     if (isLoading) {
         return (
             <table className="main">
-            <tbody>
-                <tr>
-                    <td className="home">
-                        <SearchPlace2 />
-                    </td>
-                </tr>
-                <tr>
-                    <td className="home">
-                        <Loader />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                <tbody>
+                    <tr>
+                        <td className="home">
+                            <SearchPlace2 />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className="home">
+                            <Loader />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
+        )
+    } else if (results == 0) {
+        return (
+            <table className="main">
+                <tbody>
+                    <tr>
+                        <td className="home">
+                            <SearchPlace2 />
+                        </td>
+                    </tr>
+                    <tr >
+                        <td className="results">
+                         
+                                Noting Found
+                        
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         )
     }
 
 
     return (
         <>
-         <table className="main">
-            <tbody>
-                <tr>
-                    <td className="home">
-                        <SearchPlace2 />
-                    </td>
-                </tr>
-             
-            </tbody>
-        </table>
-      
+            <table className="main">
+                <tbody>
+                    <tr>
+                        <td className="home">
+                            <SearchPlace2 />
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
 
             <Box>
 
