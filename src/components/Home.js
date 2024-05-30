@@ -15,8 +15,8 @@ const Home = () => {
                     The Art Institute Of Chicago. </p>
                  <p className="homePage2">  You can search museum by artist, artwork title,
                   <br></br>
-                  place of origin, medium, year... <br></br>
-                   For best search use " ".
+                   place of origin, medium, year... <br></br>
+                   For best results use " ".
                 </p>
             </div>
             <ImageBaseHome />
