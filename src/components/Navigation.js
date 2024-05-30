@@ -7,10 +7,8 @@ import ImageBaseResPage from "./result/ImageBaseResPage";
 import ImageBaseResPage2 from "./result/ImageBaseResPage2";
 import ImageBaseClick from "./result/ImageBaseClick";
 import ImageBaseClick2 from "./result/ImageBaseClick2";
-
-
 import Footers from "./Footers";
-import BanerImg from "./result/BanerImg";
+import BannerImg from "./result/BannerImg";
 
 
 
@@ -21,7 +19,7 @@ export default function Navigation() {
 
         <div className="institute">
           <Link to='/' >
-         <BanerImg/>
+         <BannerImg/>
           </Link>
         </div >
  
